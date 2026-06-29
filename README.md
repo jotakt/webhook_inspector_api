@@ -1,14 +1,3 @@
-Boa, então o erro no Deno Deploy faz sentido: **sem KV/database criado no projeto Deploy**, qualquer chamada a `Deno.openKv()` pode estourar em produção. Depois que criar o KV no painel do Deno Deploy, a criação do inspector deve parar de cair em internal error.
-
-Sobre os três pontos:
-
----
-
-## 1. `README.md`
-
-Crie/substitua o arquivo `README.md` com:
-
-````md
 # Hookcheck
 
 Webhook inspector and relay built with Fresh, Deno KV and Server-Sent Events.
