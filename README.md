@@ -4,7 +4,7 @@ Webhook inspector and relay built with Fresh, Deno KV and Server-Sent Events.
 
 Hookcheck generates temporary URLs for receiving, inspecting and forwarding webhooks during development. It is useful for debugging integrations with services like Stripe, GitHub, payment platforms and other third-party APIs before implementing the final backend handler.
 
-[![Icoziv-icons](https://i.icoziv.workers.dev/icons?i=deno,typescript,linux-dark)](https://i.icoziv.workers.dev)
+[![Icoziv-icons](https://i.icoziv.workers.dev/icons?i=deno-dark,fresh-dark,tailwindcss-dark,typescript)](https://i.icoziv.workers.dev)
 
 ## Features
 
