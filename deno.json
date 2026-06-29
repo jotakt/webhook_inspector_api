@@ -57,5 +57,10 @@
     "types": [
       "vite/client"
     ]
+  },
+  "deploy": {
+    "org": "joma",
+    "app": "hookcheck"
   }
 }
+

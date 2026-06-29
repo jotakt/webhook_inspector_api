@@ -1,5 +1,9 @@
 import { define } from "@/utils.ts";
-import { saveWebhookLog } from "@/lib/webhook_store.ts";
+import { relayWebhook } from "@/lib/relay.ts";
+import {
+  getChannelConfig,
+  saveWebhookLog,
+} from "@/lib/webhook_store.ts";
 import type { WebhookLog } from "@/lib/types.ts";
 
 function headersToObject(headers: Headers): Record<string, string> {
@@ -61,14 +65,21 @@ async function handleWebhook(ctx: any) {
 
   await saveWebhookLog(log);
 
-  console.log("WEBHOOK SAVED");
-  console.log(JSON.stringify(log, null, 2));
+  const config = await getChannelConfig(channel);
+
+  let relay = null;
+
+  if (config.forwardTo) {
+    relay = await relayWebhook(log, config.forwardTo);
+  }
 
   return new Response(
     JSON.stringify(
       {
         ok: true,
         saved: true,
+        relayed: Boolean(relay),
+        relay,
         source: "file-route",
         channel,
         id: log.id,

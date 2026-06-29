@@ -11,8 +11,10 @@ export default define.page(() => {
         </p>
 
         <h1 class="max-w-3xl text-5xl font-bold tracking-tight md:text-7xl">
-          Webhook Inspector simples, rápido e temporário.
+          Webhook Inspector 
         </h1>
+
+        <h3 class="max-w-3xl text-5xl tracking-tight md:text-7xl">simples, rápido e temporário.</h3>
 
         <p class="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
           Gere uma URL exclusiva, receba webhooks externos, inspecione headers,
